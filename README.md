@@ -14,6 +14,10 @@ $registry->search('Martin', postcode: '67');
 $registry->facility('580008803');
 ```
 
+No framework needed: the package requires `glitchr/omnistate` and `symfony/http-client`.
+`$httpClient` is the HTTP client to call with - the application's, `HttpClient::create()` in
+plain PHP, a `MockHttpClient` in a test.
+
 The key is free: an account on the ANS's [Gravitee portal](https://portal.api.esante.gouv.fr), a
 subscription to "API Annuaire Santé en libre accès"; it goes in the `ESANTE-API-KEY` header. 17 calls a
 second. There is no sandbox: the API answers the real register. Without a key, every call throws
